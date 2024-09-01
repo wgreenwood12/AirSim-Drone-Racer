@@ -5,6 +5,11 @@
 
 This guide will help you set up your Python environment and install the necessary dependencies to run the AirSimNeurIPS API and simulations.
 
+To get started, clone this repository to your directory.
+```bash
+git clone https://github.com/robin6205/SWARM-Drone-Racer.git
+```
+
 ## 1. Check Python Version
 
 Before proceeding, ensure that you have Python version > 3.6 installed on your system (python 3.10 is supported). You can check your Python version by running the following command in your terminal or command prompt:
