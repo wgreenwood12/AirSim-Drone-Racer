@@ -52,7 +52,16 @@ This will install all the dependencies listed in the `requirements.txt` file.
 
 ## 4. Prepare to Run the Simulation
 
-Now that your environment is set up, you are ready to run the AirSimNeurIPS API. Execute the simulation by running the following command:
+Download the v0.3 [Linux](https://github.com/microsoft/AirSim-NeurIPS2019-Drone-Racing/releases/tag/v0.3.0-linux) or [Windows](https://github.com/microsoft/AirSim-NeurIPS2019-Drone-Racing/releases/tag/v0.3.0) AirSim.zip, and unzip it.
+
+Download the training environments (shipped in pakfiles):
+- **Soccer_Field.pak**
+
+Move the environment pakfiles into `AirSim/AirSimExe/Content/Paks`.
+
+Download and move the `settings.json` file to `~/Documents/AirSim/settings.json` (Mac/Linux/Windows).
+
+Now that your environment is set up, you are ready to run the AirSimNeurIPS API. Execute the simulation by opening a terminal, navigating to the directory and running the following command:
 
 ```bash
 ./AirsimExe.exe -windowed
