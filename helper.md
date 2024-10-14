@@ -4,5 +4,6 @@ cd "\Users\green\Downloads\AirSim (2)\Airsim"
 
 2. Run Drone Scripts:
 cd "C:\Users\green\OneDrive\Documents\dev1\SWARM-Drone-Racer"
+code .
 .\airsimvenv\Scripts\activate
 python flighttest.py   
