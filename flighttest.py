@@ -4,9 +4,8 @@ import numpy as np
 from scipy.interpolate import CubicSpline
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-from PIL import Image  # Ensure you import Image from PIL
+from PIL import Image 
 import io
-# PID Controller Class
 class PIDController:
     def __init__(self, Kp, Ki, Kd):
         self.Kp = Kp
@@ -16,21 +15,17 @@ class PIDController:
         self.integral = 0
 
     def compute(self, error, dt):
-        # Proportional term
+        # Proportional 
         P = self.Kp * error
 
-        # Integral term
+        # Integral 
         self.integral += error * dt
         I = self.Ki * self.integral
 
-        # Derivative term
+        # Derivative 
         derivative = (error - self.prev_error) / dt if dt > 0 else 0
         D = self.Kd * derivative
-
-        # Store current error for next calculation
         self.prev_error = error
-
-        # Return the control output (speed adjustment)
         return P + I + D
 
 def setup_drone_environment(client):
@@ -79,7 +74,7 @@ def move_drone_with_pid(client, x_smooth, y_smooth, z_smooth, pid_controller, ba
 
         # Calculate the adjusted speed using the PID controller
         speed_adjustment = pid_controller.compute(error, dt)
-        adjusted_speed = max(0, base_speed + speed_adjustment)  # Ensure speed is non-negative
+        adjusted_speed = max(0, base_speed + speed_adjustment)
 
         # Skip the completion cylinder check for the last point
         if i < num_points - 1 and within_completion_cylinder(drone_pos, target_pos, completion_radius):
@@ -150,7 +145,6 @@ def main():
     setup_drone_environment(client)
     x, y, z = initialize_gate_locations(client)
 
-    # Optional: Plot the gates and spline path
     # x_smooth, y_smooth, z_smooth = spline_interpolation(x, y, z, NUM_SPLINE_POINTS)
     # plot_gate_spline_spheres(x, y, z, x_smooth, y_smooth, z_smooth, SPHERE_RADIUS)
 
